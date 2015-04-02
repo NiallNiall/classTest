@@ -15,6 +15,8 @@ expParticle::expParticle(){
     
     particleDir = 1;
 //    haloRad = 100;
+    
+    haloColour = ofColor(120, 170, 200, 140);
 
     
 }
@@ -37,7 +39,7 @@ void expParticle::reset(int partX, int partY){
     
     maxHaloSize = ofRandom(200,400);
     
-    partiEasing = 0.05;
+    partiEasing = ofRandom(0.01, 0.08);
 }
 
 //------------------------------------------------------------------
@@ -97,7 +99,7 @@ void expParticle::draw(){
         ofCircle(particlePos.x, particlePos.y, particleRad);
         
         
-        ofSetColor(120, 170, 200, 140);
+        ofSetColor(haloColour);
         for(int i=0;i<360;i+=1){
             float angle = i * TWO_PI / 360;
             float x = particlePos.x + cos(angle) * ofRandom(haloRad -10, haloRad +10);

@@ -19,6 +19,33 @@ void ofApp::update(){
         p[i].update();
     }
     
+    
+    for(unsigned int i = 0; i < p.size(); i++){
+        p1 = p[i].particlePos;
+        
+        bool close = false;
+        
+        for(unsigned int j = 0; j < p.size(); j++){
+            p2 = p[j].particlePos;
+            
+            float distn = p1.distance( p2 );
+//            ofLog(OF_LOG_NOTICE, "the number is " + ofToString(distn));
+            if (distn > 10 && distn < 100){
+                close = true;
+            }
+        }
+        
+//        float distn = p1.distance( p2 );
+        
+        if(close){
+            p[i].haloColour = ofColor(250,80,50,120);
+        } else {
+           p[i].haloColour = ofColor(0,120,250,120);
+        }
+    }
+
+
+    
 }
 
 //--------------------------------------------------------------
@@ -67,6 +94,8 @@ void ofApp::mousePressed(int x, int y, int button){
         partiNum = 0;
 
     }
+    
+    
 
 }
 

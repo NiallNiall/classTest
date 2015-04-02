@@ -38,6 +38,9 @@ public:
     float maxPartiSize, maxHaloSize;
     float partiEasing;
     bool particleMoving;
+    
+    
+    ofColor haloColour;
 
 };
 

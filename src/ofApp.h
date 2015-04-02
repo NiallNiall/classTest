@@ -24,4 +24,6 @@ class ofApp : public ofBaseApp{
         vector <expParticle> p;
         int partiNum;
         int maxParti;
+    
+        ofVec2f p1, p2;
 };
