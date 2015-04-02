@@ -65,6 +65,17 @@ void ofApp::keyPressed(int key){
             p[i].movePart(ofRandom(ofGetWidth()),ofRandom(ofGetHeight()));
         }
     }
+    
+    if( key == 'j'){
+        p[partiNum].reset(ofRandom(ofGetWidth()),ofRandom(ofGetHeight()));
+        
+        if(partiNum < (maxParti-1)) {
+            partiNum += 1;
+        } else {
+            partiNum = 0;
+            
+        }
+    }
 
 }
 
